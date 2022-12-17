@@ -5,6 +5,7 @@ import { Panel, PanelHeader, PanelHeaderBack } from '@vkontakte/vkui';
 
 import persik from '../img/persik.png';
 import './Persik.css';
+import ActivePanel from "./ActivePanel";
 
 const Persik = props => (
 	<Panel id={props.id}>
@@ -14,6 +15,7 @@ const Persik = props => (
 			Persik
 		</PanelHeader>
 		<img className="Persik" src={persik} alt="Persik The Cat"/>
+		<ActivePanel></ActivePanel>
 	</Panel>
 );
 
