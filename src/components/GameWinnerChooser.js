@@ -9,10 +9,10 @@ const GameWinnerChooser = props => (
 			</Title>
 			<ButtonGroup mode="vertical" style={{display: "flex", justifyContent: "center", marginTop: 14}}>
 					<Button size="l" mode="secondary" stretched>
-						{props.gameInfo.leftTeam.teamName}
+						{props.gameInfo.TeamAName}
 					</Button>
 					<Button size="l" mode="secondary" stretched>
-						{props.gameInfo.rightTeam.teamName}
+						{props.gameInfo.TeamBName}
 					</Button>
 					<Button size="l" mode="secondary" stretched>
 						Будет ничья
