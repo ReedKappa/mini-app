@@ -6,6 +6,7 @@ import {CardGrid, Panel, PanelHeader, PanelHeaderBack} from '@vkontakte/vkui';
 import persik from '../img/persik.png';
 import './Persik.css';
 import TournamentTable from "../components/TournamentTable";
+import GameWinnerChooser from "../components/GameWinnerChooser";
 
 const Persik = props => {
 
@@ -21,6 +22,7 @@ const Persik = props => {
 		<img className="Persik" src={persik} alt="Persik The Cat"/>
 		<CardGrid size="l">
 			<TournamentTable tableData={tableData}/>
+			<GameWinnerChooser/>
 		</CardGrid>
 	</Panel>
 )};
