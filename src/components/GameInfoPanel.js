@@ -1,7 +1,5 @@
 import React from 'react';
 
-import persik from "../img/persik.png";
-
 import {Avatar, ButtonGroup, Card, Div, RichCell, Separator, Title} from '@vkontakte/vkui';
 import {Icon28ChevronBack} from "@vkontakte/icons";
 
@@ -15,7 +13,7 @@ const GameInfoPanel = props => (
 					<div><Icon28ChevronBack onClick={() => {}}/></div>
 					<div>
 							<Title level="2">
-								Завтра в 16:30
+								{props.gameInfo.eventDateTime}
 							</Title>
 					</div>
 					<div/>
@@ -26,9 +24,9 @@ const GameInfoPanel = props => (
 
 				<Div style={{display: "flex", justifyContent: "center"}}>
 					<ButtonGroup style={{display: "inline-flex", alignItems: "center"}}>
-						<PlayerSide reverse={false}/>
-						<GameCounter/>
-						<PlayerSide reverse={true}/>
+						<PlayerSide reverse={false} player={props.gameInfo.leftTeam}/>
+						<GameCounter score={props.gameInfo.score}/>
+						<PlayerSide reverse={true} player={props.gameInfo.rightTeam}/>
 					</ButtonGroup>
 				</Div>
 
@@ -36,13 +34,13 @@ const GameInfoPanel = props => (
 
 				<Div style={{display: "flex", justifyContent: "space-between"}}>
 					<RichCell caption="Лига">
-						Чемпионшип Англии
+						{props.gameInfo.league}
 					</RichCell>
 					<RichCell caption="Стадион">
-						Стадион Кенилворт-Роуд
+						{props.gameInfo.stadium}
 					</RichCell>
 					<RichCell caption="Судья">
-						Даррен Бонд
+						{props.gameInfo.lawyer}
 					</RichCell>
 				</Div>
 
@@ -52,17 +50,14 @@ const GameInfoPanel = props => (
 		</Card>
 );
 
-GameInfoPanel.propTypes = {
-};
-
 export default GameInfoPanel;
 
-const GameCounter = () => {
+const GameCounter = ({score}) => {
 	return (
 		<ButtonGroup style={{display: "inline-flex"}}>
 			<Div>
 				<Title level="1">
-					-
+					{score.leftTeamScore ? score.leftTeamScore : "-"}
 				</Title>
 			</Div>
 			<Div>
@@ -72,22 +67,22 @@ const GameCounter = () => {
 			</Div>
 			<Div>
 				<Title level="1">
-					-
+					{score.rightTeamScore ? score.rightTeamScore : "-"}
 				</Title>
 			</Div>
 		</ButtonGroup>
 	);
 };
 
-const PlayerSide = ({reverse}) => {
+const PlayerSide = ({reverse, player}) => {
 	return (
 		<ButtonGroup style={{display: "inline-flex", alignItems: "center", flexDirection: reverse ? "row-reverse" : "row"}}>
 			<Div>
-				<Avatar size={48} src={persik}/>
+				<Avatar size={48} src={player.teamLogoUrl}/>
 			</Div>
 			<Div>
 				<Title level="1">
-					Лутон
+					{player.teamName}
 				</Title>
 			</Div>
 		</ButtonGroup>

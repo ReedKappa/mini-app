@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import {Button, ButtonGroup, Card, Group, Title} from '@vkontakte/vkui';
+import {Button, ButtonGroup, Card, Title} from '@vkontakte/vkui';
 
 const GameWinnerChooser = props => (
 		<Card mode="shadow" style={{ padding: 14}}>
@@ -10,10 +9,10 @@ const GameWinnerChooser = props => (
 			</Title>
 			<ButtonGroup mode="vertical" style={{display: "flex", justifyContent: "center", marginTop: 14}}>
 					<Button size="l" mode="secondary" stretched>
-						Лутон
+						{props.gameInfo.leftTeam.teamName}
 					</Button>
 					<Button size="l" mode="secondary" stretched>
-						Миллуолл
+						{props.gameInfo.rightTeam.teamName}
 					</Button>
 					<Button size="l" mode="secondary" stretched>
 						Будет ничья
