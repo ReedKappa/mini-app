@@ -6,13 +6,15 @@ import {Icon28ChevronBack} from "@vkontakte/icons";
 export default function Header(props) {
   return (
     <Div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, padding: 0}}>
-      <div><Icon28ChevronBack onClick={props.go} data-to="home" style={{cursor: "pointer", width: "20px", padding: "10px"}}/></div>
-      <div>
+      {/*<div>*/}
+      {/*    <Icon28ChevronBack onClick={props.go} data-to="home" style={{cursor: "pointer", width: "20px", padding: "10px"}}/>*/}
+      {/*</div>*/}
+      <div style={{margin: "0 auto", paddingTop: 20}}>
         <Title level="2">
           Центр матчей
         </Title>
       </div>
-      <div style={{width: "30px"}}/>
+      {/*<div style={{width: "30px"}}/>*/}
     </Div>
   )
 }

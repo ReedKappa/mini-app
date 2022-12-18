@@ -10,7 +10,7 @@ import Page2 from './panels/page2/Body';
 
 const App = () => {
 	const [scheme, setScheme] = useState('bright_light')
-	const [activePanel, setActivePanel] = useState('home');
+	const [activePanel, setActivePanel] = useState('page1');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
@@ -34,6 +34,9 @@ const App = () => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
 
+	const [currentDate, changeDate] = useState("15")
+	const [gameId, changeGameId] = useState("100000113")
+
 	return (
 		<ConfigProvider scheme={scheme}>
 			<AdaptivityProvider>
@@ -42,9 +45,9 @@ const App = () => {
 						<SplitCol>
 							<View activePanel={activePanel}>
 								<Home id='home' fetchedUser={fetchedUser} go={go} />
-								<Persik id='persik' go={go} />
-								<Page1 id="page1" go={go} />
-								<Page2 id='page2' go={go} />
+								{/*<Persik id='persik' go={go} />*/}
+								<Page1 id="page1" go={go} changeDate={changeDate} currentDate={currentDate} gameId={gameId} changeGameId={changeGameId}/>
+								<Page2 id='page2' go={go} changeDate={changeDate} currentDate={currentDate}/>
 							</View>
 						</SplitCol>
 					</SplitLayout>

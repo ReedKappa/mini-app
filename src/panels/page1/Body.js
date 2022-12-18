@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Header from './Header'
 import Dates from './Dates'
 import Content from './Content'
@@ -11,14 +11,15 @@ import { Panel, Button } from '@vkontakte/vkui';
 
 export default function Body(props) {
   let classes = Styles.bodyWrapper;
-  
+
+
   return (
-    <Panel id={props.id} className={classes}>
+    <Panel id={props.id} className={classes} >
         <Header go={props.go}></Header>
-        <Dates></Dates>
+        <Dates changeDate={props.changeDate}></Dates>
         <Button stretched size="l" mode="primary" >discuss</Button>
         <hr></hr> 
-        <Content go={props.go}></Content>
+        <Content go={props.go} currentDate={props.currentDate} changeGameId={props.changeGameId}></Content>
     </Panel>
   )
 

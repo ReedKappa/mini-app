@@ -2,14 +2,14 @@
 import React from "react";
 import { HorizontalCell, HorizontalScroll } from "@vkontakte/vkui";
 
-export default function Dates() { 
+export default function Dates(props) {
   let dates = generateDate()
 
   return (
     <HorizontalScroll>
         <div style={{ display: "flex" }}>
         {dates.map(element=>(
-              <HorizontalCell className="cell" size="l">
+              <HorizontalCell className="cell" size="l" onClick={() => props.changeDate(`${element}`)}>
                 <p>{element + ' число'}</p>
               </HorizontalCell>
             

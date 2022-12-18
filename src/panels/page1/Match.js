@@ -10,6 +10,7 @@ export default function Match(props) {
     const [isInfoHidden, setHidden] = useState(false);
     const handleHidden = () => {
         setHidden(prev => !prev);
+        props.changeGameId(props.info.GameId)
     }
   return (
     <Div>
@@ -19,7 +20,7 @@ export default function Match(props) {
               {Styles.isInfoHidden ? <Icon16Dropdown></Icon16Dropdown> : <Icon16DropdownFlipped></Icon16DropdownFlipped>}
             </Div>
         </div>
-        <MatchInfo className={Styles.notHidden} isHidden={isInfoHidden}></MatchInfo>
+        <MatchInfo className={Styles.notHidden} isHidden={isInfoHidden} info={props.info}></MatchInfo>
     </Div>
   )
 }
