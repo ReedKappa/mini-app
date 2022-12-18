@@ -20,7 +20,7 @@ const TournamentTable = props => (
 					<span>Турнирная таблица</span>
 					<span>О</span>
 				</Title>
-				<Table></Table>
+				<Table arr = {props.tableData}/>
 			</Card>
 		</CardGrid>
 	</Panel>

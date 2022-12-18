@@ -5,9 +5,9 @@ import './Table.css';
 import {Avatar, SimpleCell} from "@vkontakte/vkui";
 import persik from "../img/persik.png";
 
-export default function MatchBoard() {
+export default function MatchBoard({arr}) {
     const [teams, setTeams] = useState([])
-    let arr = [{id: 1, team: "navi", photo:persik}, {id: 2, team: "vp", photo:""}]
+
     return (
         <div style={{position: "relative"}}>
             <table style={{width: "100%"}}>
