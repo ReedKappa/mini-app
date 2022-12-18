@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Avatar, Button, ModalCard, ModalRoot, Panel, PanelHeader, PanelHeaderBack} from '@vkontakte/vkui';
+import {Avatar, ModalCard} from '@vkontakte/vkui';
 
 import persik from '../img/persik.png';
 import './Persik.css';
-import {Icon56MoneyTransferOutline} from "@vkontakte/icons";
-
 
 
 const ExperimentalModal = props => {
