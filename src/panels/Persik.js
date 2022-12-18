@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {CardGrid, Panel, PanelHeader, PanelHeaderBack} from '@vkontakte/vkui';
+import {CardGrid, Panel, PanelHeader, PanelHeaderBack, SplitCol, SplitLayout} from '@vkontakte/vkui';
 
 import persik from '../img/persik.png';
 import './Persik.css';
 import TournamentTable from "../components/TournamentTable";
 import GameWinnerChooser from "../components/GameWinnerChooser";
+import GameInfoPanel from "../components/GameInfoPanel";
 
 const Persik = props => {
 
@@ -19,11 +20,12 @@ const Persik = props => {
 		>
 			Persik
 		</PanelHeader>
-		<img className="Persik" src={persik} alt="Persik The Cat"/>
-		<CardGrid size="l">
-			<TournamentTable tableData={tableData}/>
-			<GameWinnerChooser/>
-		</CardGrid>
+
+				<GameInfoPanel/>
+
+				<GameWinnerChooser/>
+				<TournamentTable tableData={tableData}/>
+
 	</Panel>
 )};
 
