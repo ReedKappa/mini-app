@@ -1,0 +1,21 @@
+.discuss > div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 95%;
+    height: 40px;
+    background-color: rgb(60, 90, 224);
+    border: 1px solid blue;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.linkWrapper {
+    height: 20px;
+    margin: 0 10px;
+}
+.discuss a {
+    text-decoration: none;
+    color: aliceblue;
+    text-align: center;
+}

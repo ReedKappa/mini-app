@@ -38,12 +38,9 @@ const Persik = props => {
 		>
 			Persik
 		</PanelHeader>
-
 				<GameInfoPanel gameInfo={data}/>
-
 				<GameWinnerChooser gameInfo={data}/>
 				<TournamentTable tableData={tableData}/>
-
 	</Panel>
 )};
 

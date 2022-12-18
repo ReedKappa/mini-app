@@ -5,19 +5,15 @@ import {Icon28ChevronBack} from "@vkontakte/icons";
 
 const GameInfoPanel = props => (
 		<Card mode="shadow" style={{padding: 14}}>
-
 			<Div>
-
 				<Div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, padding: 0}}>
-
-					<div><Icon28ChevronBack onClick={() => {}}/></div>
+					<div><Icon28ChevronBack onClick={props.go} data-to="home" style={{cursor: "pointer"}}/></div>
 					<div>
-							<Title level="2">
-								{props.gameInfo.eventDateTime}
-							</Title>
+						<Title level="2">
+							{props.gameInfo.eventDateTime}
+						</Title>
 					</div>
 					<div/>
-
 				</Div>
 
 				<Separator/>
@@ -43,10 +39,7 @@ const GameInfoPanel = props => (
 						{props.gameInfo.lawyer}
 					</RichCell>
 				</Div>
-
 			</Div>
-
-
 		</Card>
 );
 
