@@ -12,16 +12,16 @@ export default function TournamentTableContents({arr}) {
                 <tbody>
                 {(
                     arr.map((x =>
-                            <tr key={x.team}>
+                            <tr key={x.Name}>
 
                                 <td>
                                     <SimpleCell style={{padding:0}} before={<Avatar size={34} src={x.photo}/>}>
-                                        {x.team}
+                                        {x.Name}
                                     </SimpleCell>
                                 </td>
                                 <td></td>
                                 <td className={"score"}>
-                                    {x.id}
+                                    {x.score}
                                 </td>
                             </tr>
                     ))

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {Avatar, ButtonGroup, Card, Div, RichCell, Separator, Title} from '@vkontakte/vkui';
 import {Icon28ChevronBack} from "@vkontakte/icons";
 
-const GameInfoPanel = props => (
+const GameInfoPanel = props => {
+	const [score, setScore] = useState({score: {leftTeamScore: props.TeamAScore, rightTeamScore: props.TeamBScore}})
+	return (
 		<Card mode="shadow" style={{padding: 14}}>
 
 			<Div>
@@ -13,7 +15,7 @@ const GameInfoPanel = props => (
 					<div><Icon28ChevronBack onClick={() => {}}/></div>
 					<div>
 							<Title level="2">
-								{props.gameInfo.eventDateTime}
+								{props.gameInfo.DateTime.toString().split('T')[0]} {props.gameInfo.DateTime.toString().split('T')[1]}
 							</Title>
 					</div>
 					<div/>
@@ -24,23 +26,26 @@ const GameInfoPanel = props => (
 
 				<Div style={{display: "flex", justifyContent: "center"}}>
 					<ButtonGroup style={{display: "inline-flex", alignItems: "center"}}>
-						<PlayerSide reverse={false} player={props.gameInfo.leftTeam}/>
-						<GameCounter score={props.gameInfo.score}/>
-						<PlayerSide reverse={true} player={props.gameInfo.rightTeam}/>
+						<PlayerSide reverse={false} player={props.gameInfo.TeamAKey}/>
+						<GameCounter score={{
+							TeamAScore: props.gameInfo.TeamAScore,
+							TeamBScore: props.gameInfo.TeamBScore,
+						}}/>
+						<PlayerSide reverse={true} player={props.gameInfo.TeamBKey}/>
 					</ButtonGroup>
 				</Div>
 
 				<Separator/>
 
 				<Div style={{display: "flex", justifyContent: "space-between"}}>
-					<RichCell caption="Лига">
-						{props.gameInfo.league}
+					<RichCell caption="Группа">
+						{props.gameInfo.Group ? props.gameInfo.Group : 'Неизвестна'}
 					</RichCell>
-					<RichCell caption="Стадион">
-						{props.gameInfo.stadium}
+					<RichCell caption="Стадия">
+						{props.gameInfo.Status ? props.gameInfo.Status : 'Неизвестна'}
 					</RichCell>
-					<RichCell caption="Судья">
-						{props.gameInfo.lawyer}
+					<RichCell caption="Тип игры">
+						{`Best of ${props.gameInfo.BestOf ? props.gameInfo.BestOf : 'Неизвестен'}`}
 					</RichCell>
 				</Div>
 
@@ -48,7 +53,8 @@ const GameInfoPanel = props => (
 
 
 		</Card>
-);
+	)
+};
 
 export default GameInfoPanel;
 
@@ -57,7 +63,7 @@ const GameCounter = ({score}) => {
 		<ButtonGroup style={{display: "inline-flex"}}>
 			<Div>
 				<Title level="1">
-					{score.leftTeamScore ? score.leftTeamScore : "-"}
+					{score.TeamAScore != null ? score.TeamAScore : "-"}
 				</Title>
 			</Div>
 			<Div>
@@ -67,7 +73,7 @@ const GameCounter = ({score}) => {
 			</Div>
 			<Div>
 				<Title level="1">
-					{score.rightTeamScore ? score.rightTeamScore : "-"}
+					{score.TeamBScore != null ? score.TeamBScore : "-"}
 				</Title>
 			</Div>
 		</ButtonGroup>
@@ -78,11 +84,11 @@ const PlayerSide = ({reverse, player}) => {
 	return (
 		<ButtonGroup style={{display: "inline-flex", alignItems: "center", flexDirection: reverse ? "row-reverse" : "row"}}>
 			<Div>
-				<Avatar size={48} src={player.teamLogoUrl}/>
+				<Avatar size={48} src={"https://lookw.ru/8/828/1476173404-1.jpg"}/>
 			</Div>
 			<Div>
 				<Title level="1">
-					{player.teamName}
+					{player}
 				</Title>
 			</Div>
 		</ButtonGroup>
