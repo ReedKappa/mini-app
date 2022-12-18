@@ -83,7 +83,7 @@ const App = () => {
 								<Persik id='persik' fetchedUser={fetchedUser} go={go} />
 							</View>
 							<ModalRoot activeModal={activeModal} onClose={modalBack}>
-								<ExperimentalModal id='modal' go={goByName} changeActiveModal={changeActiveModal}/>
+								<ExperimentalModal id='modal' go={goByName} changeActiveModal={changeActiveModal} balance={0} fetchedUser={fetchedUser}/>
 							</ModalRoot>
 						</SplitCol>
 					</SplitLayout>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Button, ModalCard, ModalRoot, Panel, PanelHeader, PanelHeaderBack} from '@vkontakte/vkui';
+import {Avatar, Button, ModalCard, ModalRoot, Panel, PanelHeader, PanelHeaderBack} from '@vkontakte/vkui';
 
 import persik from '../img/persik.png';
 import './Persik.css';
@@ -20,20 +20,8 @@ const ExperimentalModal = props => {
 		id={props.id}
 		onClose={() => props.changeActiveModal(null)}
 		data-to="home"
-		icon={<Icon56MoneyTransferOutline />}
-		header="Отправляйте деньги друзьям, используя банковскую карту"
-		subheader="Номер карты получателя не нужен — он сам решит, куда зачислить средства."
-		actions={
-			<Button
-				size="l"
-				mode="primary"
-				stretched
-				onClick={onButtonClicked}
-				data-to='persik'
-			>
-				Попробовать
-			</Button>
-		}
+		icon={<Avatar src={props.fetchedUser.photo_200}/>}
+		header={`Ваш счет: ${props.balance}`}
 	></ModalCard>
 };
 
@@ -41,6 +29,7 @@ ExperimentalModal.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 	changeActiveModal: PropTypes.func.isRequired,
+	balance: PropTypes.number.isRequired
 };
 
 export default ExperimentalModal;
