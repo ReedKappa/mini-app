@@ -7,19 +7,15 @@ const GameInfoPanel = props => {
 	const [score, setScore] = useState({score: {leftTeamScore: props.TeamAScore, rightTeamScore: props.TeamBScore}})
 	return (
 		<Card mode="shadow" style={{padding: 14}}>
-
 			<Div>
-
 				<Div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, padding: 0}}>
-
-					<div><Icon28ChevronBack onClick={() => {}}/></div>
+					<div><Icon28ChevronBack onClick={props.go} data-to="home" style={{cursor: "pointer"}}/></div>
 					<div>
 							<Title level="2">
 								{props.gameInfo.DateTime.toString().split('T')[0]} {props.gameInfo.DateTime.toString().split('T')[1]}
 							</Title>
 					</div>
 					<div/>
-
 				</Div>
 
 				<Separator/>
@@ -48,10 +44,7 @@ const GameInfoPanel = props => {
 						{`Best of ${props.gameInfo.BestOf ? props.gameInfo.BestOf : 'Неизвестен'}`}
 					</RichCell>
 				</Div>
-
 			</Div>
-
-
 		</Card>
 	)
 };

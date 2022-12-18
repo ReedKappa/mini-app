@@ -5,6 +5,8 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import Persik from './panels/Persik';
+import Page1 from './panels/page1/Body';
+import Page2 from './panels/page2/Body';
 
 const App = () => {
 	const [scheme, setScheme] = useState('bright_light')
@@ -41,6 +43,8 @@ const App = () => {
 							<View activePanel={activePanel}>
 								<Home id='home' fetchedUser={fetchedUser} go={go} />
 								<Persik id='persik' go={go} />
+								<Page1 id="page1" go={go} />
+								<Page2 id='page2' go={go} />
 							</View>
 						</SplitCol>
 					</SplitLayout>

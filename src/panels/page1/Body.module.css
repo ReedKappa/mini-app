@@ -1,0 +1,13 @@
+.bodyWrapper {
+    font-family: sans-serif;
+    text-align: center;
+    max-width: 1080px;
+  }
+.body > div {
+    margin-top: 5px;
+}
+.vkuiPanel.vkuiPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

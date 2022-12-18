@@ -5,7 +5,7 @@ import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@v
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
+		{/* <PanelHeader>Example</PanelHeader>
 		{fetchedUser &&
 		<Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
 			<Cell
@@ -14,12 +14,15 @@ const Home = ({ id, go, fetchedUser }) => (
 			>
 				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
 			</Cell>
-		</Group>}
+		</Group>} */}
 
-		<Group header={<Header mode="secondary">Navigation Example</Header>}>
+		<Group header={<Header mode="secondary">Навигация</Header>}>
 			<Div>
-				<Button stretched size="l" mode="secondary" onClick={go} data-to="persik">
-					Show me the Persik, please
+				<Button stretched size="l" mode="secondary" onClick={go} data-to="page1">
+					page1
+				</Button>
+				<Button stretched size="l" mode="secondary" onClick={go} data-to="page2">
+					page2
 				</Button>
 			</Div>
 		</Group>

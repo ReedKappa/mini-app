@@ -65,12 +65,10 @@ const Persik = props => {
 		>
 			Persik
 		</PanelHeader>
-
 				<GameInfoPanel gameInfo={game}/>
 
 				<GameWinnerChooser gameInfo={game}/>
 				<TournamentTable tableData={commands.map(elem =>({score: elem.Group, Name: elem.Name, photo:persik}))}/>
-
 	</Panel>
 )};
 

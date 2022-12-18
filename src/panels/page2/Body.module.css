@@ -1,0 +1,21 @@
+.bodyWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.contentWrapper, .sideWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.contentWrapper {
+    width: 70%;
+}
+.sideWrapper {
+    width: 29%;
+}
+.contentWrapper > div {
+    margin-bottom: 10px;
+}
+.contentWrapper > div {
+    margin-bottom: 10px;
+}
